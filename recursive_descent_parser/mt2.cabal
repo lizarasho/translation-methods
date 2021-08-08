@@ -1,0 +1,66 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: ddddf731360983724d75cc6144b32e809a01363058adf7bb5d802385eda98130
+
+name:           recursive_descent_parser
+version:        0.1.0.0
+description:    Translation methods lab, ITMO
+homepage:       https://github.com/lizarasho/translation-methods#readme
+bug-reports:    https://github.com/lizarasho/translation-methods/issues
+author:         Elizaveta Rasho
+maintainer:     lizarasho@gmail.com
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/lizarasho/translation-methods
+
+library
+  exposed-modules:
+      LexicalAnalyzer
+      Parser
+      Utils
+  other-modules:
+      Paths_recursive_descent_parser
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , io-streams
+    , lens
+    , monad-control
+    , monad-loops
+    , mtl
+    , transformers
+  default-language: Haskell2010
+
+test-suite , recursive_descent_parser_test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_recursive_descent_parser
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , io-streams
+    , lens
+    , monad-control
+    
+    , monad-loops
+    , mtl
+    , recursive_descent_parser
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , transformers
+  default-language: Haskell2010

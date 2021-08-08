@@ -1,0 +1,44 @@
+name:                recursive_descent_parser
+version:             0.1.0.0
+github:              "https://github.com/lizarasho/translation-methods"
+author:              "Elizaveta Rasho"
+maintainer:          "lizarasho@gmail.com"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Translation methods lab, ITMO
+
+dependencies:
+- base >= 4.7 && < 5
+- mtl
+- containers
+- monad-loops
+- lens
+- io-streams
+- transformers
+- monad-control
+
+library:
+  source-dirs: src
+
+tests:
+  recursive_descent_parser_test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - recursive_descent_parser
+    - tasty
+    - tasty-hunit
+    - tasty-quickcheck
